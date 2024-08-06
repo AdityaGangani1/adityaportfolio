@@ -10,8 +10,10 @@ class HeaderDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 50,
       decoration: kHeaderDecoration,
       width: double.maxFinite,
+      margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
       child: Row(
         children: [
           //LOGO
