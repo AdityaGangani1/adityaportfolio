@@ -3,6 +3,7 @@ import 'package:adityaportfolio/constants/size.dart';
 import 'package:adityaportfolio/widget/drawer_mobile.dart';
 import 'package:adityaportfolio/widget/header_desktop.dart';
 import 'package:adityaportfolio/widget/header_mobile.dart';
+import 'package:adityaportfolio/widget/main_desktop.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -36,6 +37,9 @@ class _HomePageState extends State<HomePage> {
                   },
                   onLogoTap: () {},
                 ),
+
+              MainDesktop(),
+
               //SKILL
               Container(
                 height: 500,
