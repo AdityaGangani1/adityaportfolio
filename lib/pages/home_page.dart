@@ -4,6 +4,7 @@ import 'package:adityaportfolio/widget/drawer_mobile.dart';
 import 'package:adityaportfolio/widget/header_desktop.dart';
 import 'package:adityaportfolio/widget/header_mobile.dart';
 import 'package:adityaportfolio/widget/main_desktop.dart';
+import 'package:adityaportfolio/widget/main_mobile.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,6 +19,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
+    final screenHight = screenSize.width;
+
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
           key: scaffolKey,
@@ -38,7 +43,10 @@ class _HomePageState extends State<HomePage> {
                   onLogoTap: () {},
                 ),
 
-              MainDesktop(),
+              if (constraints.maxWidth >= kMinDesktopWidth)
+                MainDesktop()
+              else
+                MainMobile(),
 
               //SKILL
               Container(

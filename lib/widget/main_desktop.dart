@@ -20,7 +20,7 @@ class MainDesktop extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                "HI\n i'm aditya\nflutter devloper \ngraphic designer",
+                "HI\ni'm aditya\nflutter devloper \ngraphic designer",
                 style: TextStyle(
                   fontSize: 25,
                   height: 1.5,
@@ -28,9 +28,9 @@ class MainDesktop extends StatelessWidget {
                   color: CustomColors.whitePrimary,
                 ),
               ),
-              // SizedBox(
-              //   height: 15,
-              // ),
+              SizedBox(
+                height: 15,
+              ),
               SizedBox(
                 width: 200,
                 child: ElevatedButton(
