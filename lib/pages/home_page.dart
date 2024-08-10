@@ -1,11 +1,13 @@
 import 'package:adityaportfolio/constants/colors.dart';
 import 'package:adityaportfolio/constants/size.dart';
+import 'package:adityaportfolio/constants/skill_items.dart';
 import 'package:adityaportfolio/widget/drawer_mobile.dart';
 import 'package:adityaportfolio/widget/header_desktop.dart';
 import 'package:adityaportfolio/widget/header_mobile.dart';
 import 'package:adityaportfolio/widget/main_desktop.dart';
 import 'package:adityaportfolio/widget/main_mobile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -50,9 +52,49 @@ class _HomePageState extends State<HomePage> {
 
               //SKILL
               Container(
-                height: 500,
+                padding: EdgeInsets.fromLTRB(25, 20, 25, 60),
                 width: double.maxFinite,
-                color: Colors.blueGrey,
+                color: CustomColors.bgLight1,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    //title
+                    const Text(
+                      'What i can do',
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: CustomColors.whitePrimary),
+                    ),
+                    //platform and skill
+                    Row(
+                      children: [
+                        //platform
+                        ConstrainedBox(
+                          constraints: BoxConstraints(maxWidth: 450),
+                          child: Wrap(
+                            children: [
+                              for (int i = 0; i < platformsItem.length; i++)
+                                Container(
+                                  width: 200,
+                                  decoration: BoxDecoration(
+                                    color: CustomColors.bgLight2,
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: ListTile(
+                                    leading:
+                                        Image.asset(platformsItem[i]["img"]),
+                                    title: Text(platformsItem[i]["title"]),
+                                  ),
+                                )
+                            ],
+                          ),
+                        )
+                        //skill
+                      ],
+                    )
+                  ],
+                ),
               ),
               //PROJECT
               Container(
