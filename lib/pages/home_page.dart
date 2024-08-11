@@ -68,11 +68,15 @@ class _HomePageState extends State<HomePage> {
                     ),
                     //platform and skill
                     Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         //platform
                         ConstrainedBox(
                           constraints: BoxConstraints(maxWidth: 450),
                           child: Wrap(
+                            spacing: 5,
+                            runSpacing: 5,
                             children: [
                               for (int i = 0; i < platformsItem.length; i++)
                                 Container(
@@ -82,15 +86,35 @@ class _HomePageState extends State<HomePage> {
                                     borderRadius: BorderRadius.circular(5),
                                   ),
                                   child: ListTile(
-                                    leading:
-                                        Image.asset(platformsItem[i]["img"]),
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 10),
+                                    leading: Image.asset(
+                                      platformsItem[i]["img"],
+                                      width: 26,
+                                    ),
                                     title: Text(platformsItem[i]["title"]),
                                   ),
                                 )
                             ],
                           ),
-                        )
+                        ),
+                        SizedBox(
+                          width: 50,
+                        ),
                         //skill
+
+                        Wrap(
+                          children: [
+                            Chip(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 12, horizontal: 16),
+                              label: Text(
+                                "",
+                              ),
+                              avatar: Image.asset(""),
+                            )
+                          ],
+                        )
                       ],
                     )
                   ],
