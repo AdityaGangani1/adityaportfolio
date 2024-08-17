@@ -6,6 +6,7 @@ import 'package:adityaportfolio/widget/header_desktop.dart';
 import 'package:adityaportfolio/widget/header_mobile.dart';
 import 'package:adityaportfolio/widget/main_desktop.dart';
 import 'package:adityaportfolio/widget/main_mobile.dart';
+import 'package:adityaportfolio/widget/skill_desktop.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -66,57 +67,11 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.bold,
                           color: CustomColors.whitePrimary),
                     ),
+                    SizedBox(
+                      height: 70,
+                    ),
                     //platform and skill
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        //platform
-                        ConstrainedBox(
-                          constraints: BoxConstraints(maxWidth: 450),
-                          child: Wrap(
-                            spacing: 5,
-                            runSpacing: 5,
-                            children: [
-                              for (int i = 0; i < platformsItem.length; i++)
-                                Container(
-                                  width: 200,
-                                  decoration: BoxDecoration(
-                                    color: CustomColors.bgLight2,
-                                    borderRadius: BorderRadius.circular(5),
-                                  ),
-                                  child: ListTile(
-                                    contentPadding: EdgeInsets.symmetric(
-                                        horizontal: 20, vertical: 10),
-                                    leading: Image.asset(
-                                      platformsItem[i]["img"],
-                                      width: 26,
-                                    ),
-                                    title: Text(platformsItem[i]["title"]),
-                                  ),
-                                )
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: 50,
-                        ),
-                        //skill
-
-                        Wrap(
-                          children: [
-                            Chip(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 12, horizontal: 16),
-                              label: Text(
-                                "",
-                              ),
-                              avatar: Image.asset(""),
-                            )
-                          ],
-                        )
-                      ],
-                    )
+                    SkillDesktop()
                   ],
                 ),
               ),
