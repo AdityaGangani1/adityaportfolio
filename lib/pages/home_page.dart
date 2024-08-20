@@ -7,6 +7,7 @@ import 'package:adityaportfolio/widget/header_mobile.dart';
 import 'package:adityaportfolio/widget/main_desktop.dart';
 import 'package:adityaportfolio/widget/main_mobile.dart';
 import 'package:adityaportfolio/widget/skill_desktop.dart';
+import 'package:adityaportfolio/widget/skills_mobile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -29,8 +30,9 @@ class _HomePageState extends State<HomePage> {
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
           key: scaffolKey,
-          endDrawer:
-              constraints.maxWidth >= kMinDesktopWidth ? null : DrawerMobile(),
+          endDrawer: constraints.maxWidth >= kMinDesktopWidth
+              ? null
+              : const DrawerMobile(),
           backgroundColor: CustomColors.scaffoldBg,
           body: ListView(
             scrollDirection: Axis.vertical,
@@ -47,13 +49,13 @@ class _HomePageState extends State<HomePage> {
                 ),
 
               if (constraints.maxWidth >= kMinDesktopWidth)
-                MainDesktop()
+                const MainDesktop()
               else
-                MainMobile(),
+                const MainMobile(),
 
               //SKILL
               Container(
-                padding: EdgeInsets.fromLTRB(25, 20, 25, 60),
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
                 width: double.maxFinite,
                 color: CustomColors.bgLight1,
                 child: Column(
@@ -67,11 +69,17 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.bold,
                           color: CustomColors.whitePrimary),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 70,
                     ),
-                    //platform and skill
-                    SkillDesktop()
+
+                    //platform and skill desktop
+                    if (constraints.maxWidth > kMeDesktopWidth)
+                      const SkillDesktop()
+                    else
+                      const SkillsMobile()
+
+                    //platform skill mobile
                   ],
                 ),
               ),
