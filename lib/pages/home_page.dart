@@ -38,56 +38,75 @@ class _HomePageState extends State<HomePage> {
             scrollDirection: Axis.vertical,
             children: [
               //MAIN
-              if (constraints.maxWidth >= kMinDesktopWidth)
-                const HeaderDesktop()
-              else
-                HeaderMobile(
-                  onMenuTap: () {
-                    scaffolKey.currentState?.openEndDrawer();
-                  },
-                  onLogoTap: () {},
-                ),
+              // if (constraints.maxWidth >= kMinDesktopWidth)
+              //   const HeaderDesktop()
+              // else
+              //   HeaderMobile(
+              //     onMenuTap: () {
+              //       scaffolKey.currentState?.openEndDrawer();
+              //     },
+              //     onLogoTap: () {},
+              //   ),
 
-              if (constraints.maxWidth >= kMinDesktopWidth)
-                const MainDesktop()
-              else
-                const MainMobile(),
+              // if (constraints.maxWidth >= kMinDesktopWidth)
+              //   const MainDesktop()
+              // else
+              //   const MainMobile(),
 
-              //SKILL
+              // //SKILL
+              // Container(
+              //   padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+              //   width: double.maxFinite,
+              //   color: CustomColors.bgLight1,
+              //   child: Column(
+              //     mainAxisSize: MainAxisSize.min,
+              //     children: [
+              //       //title
+              //       const Text(
+              //         'What i can do',
+              //         style: TextStyle(
+              //             fontSize: 24,
+              //             fontWeight: FontWeight.bold,
+              //             color: CustomColors.whitePrimary),
+              //       ),
+              //       const SizedBox(
+              //         height: 70,
+              //       ),
+
+              //       //platform and skill desktop
+              //       if (constraints.maxWidth > kMeDesktopWidth)
+              //         const SkillDesktop()
+              //       else
+              //         const SkillsMobile()
+
+              //       //platform skill mobile
+              //     ],
+              //   ),
+              // ),
+              //PROJECT
               Container(
                 padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                width: double.maxFinite,
-                color: CustomColors.bgLight1,
+                width: screenWidth,
                 child: Column(
-                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    //title
-                    const Text(
-                      'What i can do',
+                    //work project title
+                    Text(
+                      'Work Projects',
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           color: CustomColors.whitePrimary),
                     ),
-                    const SizedBox(
-                      height: 70,
-                    ),
 
-                    //platform and skill desktop
-                    if (constraints.maxWidth > kMeDesktopWidth)
-                      const SkillDesktop()
-                    else
-                      const SkillsMobile()
-
-                    //platform skill mobile
+                    //work project card
+                    Container(
+                      height: 280,
+                      width: 250,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10)),
+                    )
                   ],
                 ),
-              ),
-              //PROJECT
-              Container(
-                height: 500,
-                width: double.maxFinite,
-                // color: Colors.blueGrey,
               ),
               //CONTACT
               Container(
