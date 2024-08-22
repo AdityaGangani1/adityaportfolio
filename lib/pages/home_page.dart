@@ -1,6 +1,8 @@
 import 'package:adityaportfolio/constants/colors.dart';
 import 'package:adityaportfolio/constants/size.dart';
+import 'package:adityaportfolio/utils/projects_utils.dart';
 import 'package:adityaportfolio/widget/drawer_mobile.dart';
+import 'package:adityaportfolio/widget/project_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -91,46 +93,8 @@ class _HomePageState extends State<HomePage> {
                     ),
 
                     //work project card
-                    Container(
-                      clipBehavior: Clip.antiAlias,
-                      height: 280,
-                      width: 250,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: CustomColors.bgLight2),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          //project image
-                          Image.asset(
-                            'assets/projects/1.jpg',
-                            height: 140,
-                            width: 250,
-                            fit: BoxFit.cover,
-                          ),
-                          //title
-                          const Padding(
-                            padding: EdgeInsets.fromLTRB(12, 15, 12, 12),
-                            child: Text(
-                              "title",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  color: CustomColors.whitePrimary),
-                            ),
-                          ),
-                          //subtitle
-                          const Padding(
-                            padding: EdgeInsets.fromLTRB(12, 0, 12, 12),
-                            child: Text(
-                              "subtitle",
-                              style: TextStyle(
-                                  fontSize: 10,
-                                  color: CustomColors.whiteSecondary),
-                            ),
-                          ),
-                        ],
-                      ),
+                    ProjectCard(
+                      project: workProjectUtils.first,
                     )
                   ],
                 ),
