@@ -30,8 +30,8 @@ List<ProjectsUtils> workProjectUtils = [
 
   //2
   ProjectsUtils(
-    image: '',
-    title: 'assets/projects/2.jpg',
+    image: 'assets/projects/2.jpg',
+    title: '',
     subtitle: "two",
     ioslink: "",
     weblink: "",
@@ -42,6 +42,38 @@ List<ProjectsUtils> workProjectUtils = [
   ProjectsUtils(
     image: 'assets/projects/3.jpg',
     title: "title",
+    subtitle: "three",
+    ioslink: "",
+    weblink: "",
+    androidLink: "",
+  ),
+];
+
+List<ProjectsUtils> hobbyProjectUtils = [
+  ProjectsUtils(
+    image: 'assets/projects/1.jpg',
+    title: '1titletitle',
+    subtitle: "one oneoneoneoneone oneone oneoneoneoneone",
+    ioslink: "",
+    weblink: "",
+    androidLink:
+        "https://www.apple.com/newsroom/2024/07/three-new-games-come-to-apple-arcade-in-august-including-temple-run-legends/",
+  ),
+
+  //2
+  ProjectsUtils(
+    image: 'assets/projects/2.jpg',
+    title: '2title',
+    subtitle: "two",
+    ioslink: "",
+    weblink: "",
+    androidLink: "",
+  ),
+
+  //3
+  ProjectsUtils(
+    image: 'assets/projects/3.jpg',
+    title: "3title",
     subtitle: "three",
     ioslink: "",
     weblink: "",

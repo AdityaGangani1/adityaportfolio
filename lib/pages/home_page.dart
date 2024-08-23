@@ -2,7 +2,14 @@ import 'package:adityaportfolio/constants/colors.dart';
 import 'package:adityaportfolio/constants/size.dart';
 import 'package:adityaportfolio/utils/projects_utils.dart';
 import 'package:adityaportfolio/widget/drawer_mobile.dart';
+import 'package:adityaportfolio/widget/header_desktop.dart';
+import 'package:adityaportfolio/widget/header_mobile.dart';
+import 'package:adityaportfolio/widget/main_desktop.dart';
+import 'package:adityaportfolio/widget/main_mobile.dart';
 import 'package:adityaportfolio/widget/project_card.dart';
+import 'package:adityaportfolio/widget/project_section.dart';
+import 'package:adityaportfolio/widget/skill_desktop.dart';
+import 'package:adityaportfolio/widget/skills_mobile.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -32,73 +39,58 @@ class _HomePageState extends State<HomePage> {
             scrollDirection: Axis.vertical,
             children: [
               //MAIN
-              // if (constraints.maxWidth >= kMinDesktopWidth)
-              //   const HeaderDesktop()
-              // else
-              //   HeaderMobile(
-              //     onMenuTap: () {
-              //       scaffolKey.currentState?.openEndDrawer();
-              //     },
-              //     onLogoTap: () {},
-              //   ),
+              if (constraints.maxWidth >= kMinDesktopWidth)
+                const HeaderDesktop()
+              else
+                HeaderMobile(
+                  onMenuTap: () {
+                    scaffolKey.currentState?.openEndDrawer();
+                  },
+                  onLogoTap: () {},
+                ),
 
-              // if (constraints.maxWidth >= kMinDesktopWidth)
-              //   const MainDesktop()
-              // else
-              //   const MainMobile(),
+              if (constraints.maxWidth >= kMinDesktopWidth)
+                const MainDesktop()
+              else
+                const MainMobile(),
 
-              // //SKILL
-              // Container(
-              //   padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-              //   width: double.maxFinite,
-              //   color: CustomColors.bgLight1,
-              //   child: Column(
-              //     mainAxisSize: MainAxisSize.min,
-              //     children: [
-              //       //title
-              //       const Text(
-              //         'What i can do',
-              //         style: TextStyle(
-              //             fontSize: 24,
-              //             fontWeight: FontWeight.bold,
-              //             color: CustomColors.whitePrimary),
-              //       ),
-              //       const SizedBox(
-              //         height: 70,
-              //       ),
-
-              //       //platform and skill desktop
-              //       if (constraints.maxWidth > kMeDesktopWidth)
-              //         const SkillDesktop()
-              //       else
-              //         const SkillsMobile()
-
-              //       //platform skill mobile
-              //     ],
-              //   ),
-              // ),
-              //PROJECT
+              //SKILL
               Container(
                 padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                width: screenWidth,
+                width: double.maxFinite,
+                color: CustomColors.bgLight1,
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    //work project title
-                    Text(
-                      'Work Projects',
+                    //title
+                    const Text(
+                      'What i can do',
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           color: CustomColors.whitePrimary),
                     ),
+                    const SizedBox(
+                      height: 70,
+                    ),
 
-                    //work project card
-                    ProjectCard(
-                      project: workProjectUtils.first,
-                    )
+                    //platform and skill desktop
+                    if (constraints.maxWidth > kMeDesktopWidth)
+                      const SkillDesktop()
+                    else
+                      const SkillsMobile()
+
+                    //platform skill mobile
                   ],
                 ),
               ),
+
+              SizedBox(
+                height: 30,
+              ),
+              //PROJECTS
+              ProjectSection(),
+
               //CONTACT
               Container(
                 height: 500,
