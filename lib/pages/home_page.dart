@@ -4,6 +4,7 @@ import 'package:adityaportfolio/utils/projects_utils.dart';
 import 'package:adityaportfolio/widget/contact_section.dart';
 import 'package:adityaportfolio/widget/custom_text_field.dart';
 import 'package:adityaportfolio/widget/drawer_mobile.dart';
+import 'package:adityaportfolio/widget/footer.dart';
 import 'package:adityaportfolio/widget/header_desktop.dart';
 import 'package:adityaportfolio/widget/header_mobile.dart';
 import 'package:adityaportfolio/widget/main_desktop.dart';
@@ -41,69 +42,69 @@ class _HomePageState extends State<HomePage> {
             scrollDirection: Axis.vertical,
             children: [
               //MAIN
-              // if (constraints.maxWidth >= kMinDesktopWidth)
-              //   const HeaderDesktop()
-              // else
-              //   HeaderMobile(
-              //     onMenuTap: () {
-              //       scaffolKey.currentState?.openEndDrawer();
-              //     },
-              //     onLogoTap: () {},
-              //   ),
+              if (constraints.maxWidth >= kMinDesktopWidth)
+                const HeaderDesktop()
+              else
+                HeaderMobile(
+                  onMenuTap: () {
+                    scaffolKey.currentState?.openEndDrawer();
+                  },
+                  onLogoTap: () {},
+                ),
 
-              // if (constraints.maxWidth >= kMinDesktopWidth)
-              //   const MainDesktop()
-              // else
-              //   const MainMobile(),
+              if (constraints.maxWidth >= kMinDesktopWidth)
+                const MainDesktop()
+              else
+                const MainMobile(),
 
               // //SKILL
-              // Container(
-              //   padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-              //   width: double.maxFinite,
-              //   color: CustomColors.bgLight1,
-              //   child: Column(
-              //     mainAxisSize: MainAxisSize.min,
-              //     children: [
-              //       //title
-              //       const Text(
-              //         'What i can do',
-              //         style: TextStyle(
-              //             fontSize: 24,
-              //             fontWeight: FontWeight.bold,
-              //             color: CustomColors.whitePrimary),
-              //       ),
-              //       const SizedBox(
-              //         height: 70,
-              //       ),
+              Container(
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                width: double.maxFinite,
+                color: CustomColors.bgLight1,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    //title
+                    const Text(
+                      'What i can do',
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: CustomColors.whitePrimary),
+                    ),
+                    const SizedBox(
+                      height: 70,
+                    ),
 
-              //       //platform and skill desktop
-              //       if (constraints.maxWidth > kMeDesktopWidth)
-              //         const SkillDesktop()
-              //       else
-              //         const SkillsMobile()
+                    //platform and skill desktop
+                    if (constraints.maxWidth > kMeDesktopWidth)
+                      const SkillDesktop()
+                    else
+                      const SkillsMobile()
 
-              //       //platform skill mobile
-              //     ],
-              //   ),
-              // ),
+                    //platform skill mobile
+                  ],
+                ),
+              ),
 
-              // const SizedBox(
-              //   height: 30,
-              // ),
-              // //PROJECTS
-              // ProjectSection(),
-              // const SizedBox(
-              //   height: 30,
-              // ),
+              const SizedBox(
+                height: 30,
+              ),
+              //PROJECTS
+              ProjectSection(),
+              const SizedBox(
+                height: 30,
+              ),
 
               //CONTACT
               ContactSection(),
-              //FOOTER
-              Container(
-                height: 500,
-                width: double.maxFinite,
-                // color: Colors.blueGrey,
+
+              const SizedBox(
+                height: 30,
               ),
+              //FOOTER
+              Footer()
             ],
           ));
     });
