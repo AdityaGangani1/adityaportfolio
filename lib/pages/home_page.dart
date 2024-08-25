@@ -1,6 +1,7 @@
 import 'package:adityaportfolio/constants/colors.dart';
 import 'package:adityaportfolio/constants/size.dart';
 import 'package:adityaportfolio/utils/projects_utils.dart';
+import 'package:adityaportfolio/widget/contact_section.dart';
 import 'package:adityaportfolio/widget/custom_text_field.dart';
 import 'package:adityaportfolio/widget/drawer_mobile.dart';
 import 'package:adityaportfolio/widget/header_desktop.dart';
@@ -96,65 +97,7 @@ class _HomePageState extends State<HomePage> {
               // ),
 
               //CONTACT
-              Container(
-                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                color: CustomColors.bgLight1,
-                child: Column(
-                  children: [
-                    //title
-                    Text(
-                      "Get in touch",
-                      style: TextStyle(
-                          fontSize: 24, color: CustomColors.whitePrimary),
-                    ),
-                    const SizedBox(
-                      height: 50,
-                    ),
-                    ConstrainedBox(
-                      constraints: BoxConstraints(maxWidth: 700),
-                      child: Row(
-                        children: [
-                          //name
-                          Flexible(
-                              child: CustomTextField(
-                            hintText: "Your name",
-                          )),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          //email
-                          Flexible(
-                              child: CustomTextField(
-                            hintText: "Email name",
-                          )),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    ConstrainedBox(
-                      constraints: BoxConstraints(maxWidth: 700),
-                      child: CustomTextField(
-                        hintText: "Your Message",
-                        maxline: 20,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    //button
-                    ConstrainedBox(
-                      constraints: BoxConstraints(maxWidth: 700),
-                      child: SizedBox(
-                        width: double.maxFinite,
-                        child: ElevatedButton(
-                            onPressed: () {}, child: Text("Get in touch")),
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              ContactSection(),
               //FOOTER
               Container(
                 height: 500,
@@ -166,3 +109,4 @@ class _HomePageState extends State<HomePage> {
     });
   }
 }
+//jiv na risk so u do job with sitting
