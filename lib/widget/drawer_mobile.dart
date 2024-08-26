@@ -3,8 +3,8 @@ import 'package:adityaportfolio/constants/nav_items.dart';
 import 'package:flutter/material.dart';
 
 class DrawerMobile extends StatelessWidget {
-  const DrawerMobile({super.key});
-
+  const DrawerMobile({super.key, required this.onNavItemTap});
+  final Function(int) onNavItemTap;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -33,7 +33,9 @@ class DrawerMobile extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   fontSize: 16),
               title: Text(navTitles[i]),
-              onTap: () {},
+              onTap: () {
+                onNavItemTap(i);
+              },
             )
         ],
       ),
