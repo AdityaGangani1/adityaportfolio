@@ -72,24 +72,33 @@ class ContactSection extends StatelessWidget {
             alignment: WrapAlignment.center,
             children: [
               InkWell(
-                onTap: () {
-                  js.context.callMethod('open', [SnsLinks.telegram]);
-                },
-                child: Image.asset(
-                  'assets/telegram.png',
-                  width: 28,
-                ),
-              ),
+                  onTap: () {
+                    js.context.callMethod('open', [SnsLinks.linkedin]);
+                  },
+                  child: Image.asset(
+                    'assets/linkedin.png',
+                    color: CustomColors.whiteSecondary,
+                    width: 32,
+                  )),
               InkWell(
                   onTap: () {
                     js.context.callMethod('open', [SnsLinks.github]);
                   },
-                  child: Image.asset('assets/github.png', width: 28)),
+                  child: Image.asset(
+                    'assets/github.png',
+                    color: CustomColors.whiteSecondary,
+                    width: 32,
+                  )),
               InkWell(
-                  onTap: () {
-                    js.context.callMethod('open', [SnsLinks.linkedin]);
-                  },
-                  child: Image.asset('assets/linkedin.png', width: 28)),
+                onTap: () {
+                  js.context.callMethod('open', [SnsLinks.twitter]);
+                },
+                child: Image.asset(
+                  'assets/twitter.png',
+                  color: CustomColors.whiteSecondary,
+                  width: 32,
+                ),
+              ),
             ],
           )
         ],
