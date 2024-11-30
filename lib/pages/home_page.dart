@@ -90,6 +90,7 @@ class _HomePageState extends State<HomePage> {
                       const Text(
                         'What i can do',
                         style: TextStyle(
+                            fontFamily: 'Montserrat',
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
                             color: CustomColors.whitePrimary),

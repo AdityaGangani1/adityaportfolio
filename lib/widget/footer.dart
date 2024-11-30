@@ -13,7 +13,9 @@ class Footer extends StatelessWidget {
       child: const Text(
         "Made by aditya with flutter 3.10",
         style: TextStyle(
-            fontWeight: FontWeight.w400, color: CustomColors.whiteSecondary),
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.w400,
+            color: CustomColors.whiteSecondary),
       ),
       // color: Colors.blueGrey,
     );

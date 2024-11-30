@@ -74,6 +74,7 @@ class MainMobile extends StatelessWidget {
                   text: const TextSpan(
                       text: "I'M ",
                       style: TextStyle(
+                          fontFamily: 'FiraCode',
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
                           color: Colors.white))),
@@ -81,6 +82,7 @@ class MainMobile extends StatelessWidget {
                   text: const TextSpan(
                       text: "Aditya Gangani",
                       style: TextStyle(
+                          fontFamily: 'FiraCode',
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
                           color: Colors.white)))
@@ -106,7 +108,7 @@ class MainMobile extends StatelessWidget {
                 DefaultTextStyle(
                   style: const TextStyle(
                     fontSize: 35.0,
-                    fontFamily: 'Horizon',
+                    fontFamily: 'FiraCode',
                   ),
                   child: AnimatedTextKit(
                     animatedTexts: [
@@ -139,7 +141,9 @@ class MainMobile extends StatelessWidget {
                 onPressed: () {},
                 child: const Text(
                   'Get in touch',
-                  style: TextStyle(color: CustomColors.whitePrimary),
+                  style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      color: CustomColors.whitePrimary),
                 )),
           )
         ],

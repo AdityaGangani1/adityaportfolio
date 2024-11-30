@@ -26,7 +26,11 @@ class SkillsMobile extends StatelessWidget {
                   platformsItem[i]['img'],
                   width: 26,
                 ),
-                title: Text(platformsItem[i]['title']),
+                title: Text(
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                    ),
+                    platformsItem[i]['title']),
               ),
             ),
           SizedBox(

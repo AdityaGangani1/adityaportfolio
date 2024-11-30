@@ -20,7 +20,7 @@ class SkillDesktop extends StatelessWidget {
             children: [
               for (int i = 0; i < platformsItem.length; i++)
                 Container(
-                  width: 160,
+                  width: 180,
                   decoration: BoxDecoration(
                     color: CustomColors.bgLight2,
                     borderRadius: BorderRadius.circular(5),
@@ -32,7 +32,11 @@ class SkillDesktop extends StatelessWidget {
                       platformsItem[i]["img"],
                       width: 26,
                     ),
-                    title: Text(platformsItem[i]["title"]),
+                    title: Text(
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                        ),
+                        platformsItem[i]["title"]),
                   ),
                 )
             ],
@@ -41,8 +45,8 @@ class SkillDesktop extends StatelessWidget {
         SizedBox(
           width: 50,
         ),
-        //skill
 
+        //skill
         Flexible(
           child: ConstrainedBox(
             constraints: BoxConstraints(
@@ -59,6 +63,9 @@ class SkillDesktop extends StatelessWidget {
                     backgroundColor: CustomColors.bgLight2,
                     padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
                     label: Text(
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                      ),
                       skillItem[i]["title"],
                     ),
                     avatar: Image.asset(

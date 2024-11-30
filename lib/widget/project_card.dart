@@ -38,6 +38,7 @@ class ProjectCard extends StatelessWidget {
               // "title",
               project.title,
               style: const TextStyle(
+                  fontFamily: 'Montserrat',
                   fontWeight: FontWeight.w600,
                   color: CustomColors.whitePrimary),
             ),

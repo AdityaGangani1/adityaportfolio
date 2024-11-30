@@ -19,6 +19,7 @@ class ProjectSection extends StatelessWidget {
           const Text(
             'Work Projects',
             style: TextStyle(
+              fontFamily: 'Montserrat',
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: CustomColors.whitePrimary),
@@ -52,6 +53,7 @@ class ProjectSection extends StatelessWidget {
                 const Text(
                   'Hobby Projects',
                   style: TextStyle(
+                      fontFamily: 'Montserrat',
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: CustomColors.whitePrimary),

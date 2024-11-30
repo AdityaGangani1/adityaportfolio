@@ -36,6 +36,7 @@ class HeaderDesktop extends StatelessWidget {
                   child: Text(
                     navTitles[i],
                     style: const TextStyle(
+                        fontFamily: 'Montserrat',
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                         color: CustomColors.whitePrimary),

@@ -29,6 +29,7 @@ class DrawerMobile extends StatelessWidget {
                 navIcons[i],
               ),
               titleTextStyle: const TextStyle(
+                fontFamily: 'Montserrat',
                   color: CustomColors.whitePrimary,
                   fontWeight: FontWeight.w600,
                   fontSize: 16),

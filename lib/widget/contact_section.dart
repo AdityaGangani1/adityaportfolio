@@ -18,7 +18,10 @@ class ContactSection extends StatelessWidget {
           //title
           Text(
             "Get in touch",
-            style: TextStyle(fontSize: 24, color: CustomColors.whitePrimary),
+            style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontSize: 24,
+                color: CustomColors.whitePrimary),
           ),
           const SizedBox(
             height: 50,
@@ -52,7 +55,12 @@ class ContactSection extends StatelessWidget {
             child: SizedBox(
               width: double.maxFinite,
               child: ElevatedButton(
-                  onPressed: () {}, child: const Text("Get in touch")),
+                  onPressed: () {},
+                  child: const Text(
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                      ),
+                      "Get in touch")),
             ),
           ),
           const SizedBox(
