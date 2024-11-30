@@ -32,7 +32,7 @@ class _SocialIconsState extends State<SocialIcons> {
             context,
             FontAwesomeIcons.github,
             'Github',
-            Colors.grey,
+            Colors.grey.shade500,
             () {
               // Navigate to Twitter
 
@@ -62,42 +62,70 @@ class _SocialIconsState extends State<SocialIcons> {
     VoidCallback onTap,
   ) {
     return GestureDetector(
-      onTap: onTap,
-      child: MouseRegion(
-        cursor: SystemMouseCursors.click,
-        child: Container(
-          width: 80,
-          height: 80,
-          decoration: BoxDecoration(
-            color: color.withOpacity(0.2),
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                color: color.withOpacity(0.3),
-                blurRadius: 8,
-                spreadRadius: 2,
-                offset: const Offset(2, 4),
-              ),
-            ],
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(icon, color: color, size: 35),
-              const SizedBox(height: 10),
-              Text(
-                label,
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  color: color,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+        onTap: onTap,
+        child: MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child:
+                // Container(
+                //   width: 80,
+                //   height: 80,
+                //   // decoration: BoxDecoration(
+                //   //   color: color.withOpacity(0.2),
+                //   //   borderRadius: BorderRadius.circular(10),
+                //   //   boxShadow: [
+                //   //     BoxShadow(
+                //   //       color: color.withOpacity(0.3),
+                //   //       blurRadius: 8,
+                //   //       spreadRadius: 2,
+                //   //       offset: const Offset(2, 4),
+                //   //     ),
+                //   //   ],
+                //   // ),
+
+                //   child: Column(
+                //     mainAxisAlignment: MainAxisAlignment.center,
+                //     children: [
+                //       Icon(icon, color: color, size: 35),
+                //       const SizedBox(height: 10),
+                //       Text(
+                //         label,
+                //         style: TextStyle(
+                //           fontFamily: 'Montserrat',
+                //           color: color,
+                //           fontSize: 16,
+                //           fontWeight: FontWeight.bold,
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
+                //2
+                Stack(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0xff252734),
+                        Color.fromARGB(255, 13, 70, 127)
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  height: 80,
+                  width: 80,
                 ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+                Positioned.fill(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(icon, color: color, size: 40),
+                    ],
+                  ),
+                ),
+              ],
+            )));
   }
 }

@@ -103,6 +103,7 @@ class MainDesktop extends StatelessWidget {
                     width: 200,
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                            minimumSize: const Size(280, 50),
                             backgroundColor: CustomColors.yellowPrimary),
                         onPressed: () {},
                         child: const Text(
@@ -134,10 +135,62 @@ class MainDesktop extends StatelessWidget {
           //     ),
           //   ),
           // ),
-          Image.asset(
-            'assets/dash.png',
-            width: screenWidth / 2,
-          ),
+
+          //1
+          // Container(
+          //   decoration: BoxDecoration(
+          //     shape: BoxShape.circle,
+          //     boxShadow: [
+          //       BoxShadow(
+          //         color: Colors.blue.withOpacity(0.5),
+          //         blurRadius: 20,
+          //         spreadRadius: 3,
+          //       ),
+          //     ],
+          //   ),
+          //   child: ClipOval(
+          //     child: Image.asset(
+          //       'assets/dashr.png',
+          //       fit: BoxFit.cover,
+          //       height: 300,
+          //       width: 300,
+          //     ),
+          //   ),
+          // )
+
+          //2
+          Stack(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color(0xff252734),
+                      Color.fromARGB(255, 13, 70, 127)
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                height: 320,
+                width: 320,
+              ),
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.center,
+                  child: ClipOval(
+                    child: Image.asset(
+                      'assets/dashr.png',
+                      fit: BoxFit.cover,
+                      height: 300,
+                      width: 300,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );

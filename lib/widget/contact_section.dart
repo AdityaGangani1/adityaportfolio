@@ -61,9 +61,13 @@ class ContactSection extends StatelessWidget {
               width: double.maxFinite,
               // child: CustomButton(),
               child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(280, 50),
+                      backgroundColor: CustomColors.scaffoldBg),
                   onPressed: () {},
                   child: const Text(
                       style: TextStyle(
+                        fontWeight: FontWeight.w900,
                         fontFamily: 'Montserrat',
                       ),
                       "Get in touch")),
