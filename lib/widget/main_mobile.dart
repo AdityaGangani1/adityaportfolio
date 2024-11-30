@@ -11,7 +11,7 @@ class MainMobile extends StatelessWidget {
     final screenWidth = screenSize.width;
     final screenHight = screenSize.width;
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
+      margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
       height: screenHight,
       constraints: const BoxConstraints(minHeight: 560),
       child: Column(
@@ -35,16 +35,6 @@ class MainMobile extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-
-          // const Text(
-          //   "HI\ni'm aditya\nflutter devloper \ngraphic designer",
-          //   style: TextStyle(
-          //     fontSize: 24,
-          //     height: 1.5,
-          //     fontWeight: FontWeight.bold,
-          //     color: CustomColors.whitePrimary,
-          //   ),
-          // ),
 
           SizedBox(
             height: 50,
@@ -90,35 +80,30 @@ class MainMobile extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           SizedBox(
-            height: 50,
-            width: 500,
+            height: 150,
+            // width: 1000,
+            width: MediaQuery.of(context).size.width,
             child: Row(
               mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                // const SizedBox(
-                //   width: 20.0,
-                // ),
-                // const Text(
-                //   'Be',
-                //   style: TextStyle(fontSize: 40.0),
-                // ),
-                // const SizedBox(
-                //   width: 20.0,
-                // ),
+              children: [
                 DefaultTextStyle(
                   style: const TextStyle(
-                    fontSize: 35.0,
+                    fontSize: 30.0,
                     fontFamily: 'FiraCode',
                   ),
                   child: AnimatedTextKit(
+                    repeatForever: true,
                     animatedTexts: [
-                      RotateAnimatedText('Mobile app Devloper',
+                      RotateAnimatedText(
+                        'Mobile app \nDevloper',
+                        textStyle: const TextStyle(
+                          color: Colors.indigoAccent,
+                        ),
+                      ),
+                      RotateAnimatedText('Cross-Platform \nSorcerer',
                           textStyle: const TextStyle(
-                              fontWeight: FontWeight.w900,
-                              color: Colors.indigoAccent)),
-                      RotateAnimatedText('Cross-Platform Sorcerer',
-                          textStyle:
-                              const TextStyle(color: Colors.indigoAccent)),
+                            color: Colors.indigoAccent,
+                          )),
                       RotateAnimatedText('Graphic designer',
                           textStyle:
                               const TextStyle(color: Colors.indigoAccent)),
@@ -142,6 +127,7 @@ class MainMobile extends StatelessWidget {
                 child: const Text(
                   'Get in touch',
                   style: TextStyle(
+                      fontWeight: FontWeight.w900,
                       fontFamily: 'Montserrat',
                       color: CustomColors.whitePrimary),
                 )),

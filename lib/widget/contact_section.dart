@@ -1,9 +1,12 @@
 import 'package:adityaportfolio/constants/colors.dart';
 import 'package:adityaportfolio/constants/size.dart';
 import 'package:adityaportfolio/constants/sns_links.dart';
+import 'package:adityaportfolio/utils/social_icons.dart';
 import 'package:adityaportfolio/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'dart:js' as js;
+
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ContactSection extends StatelessWidget {
   const ContactSection({super.key});
@@ -16,9 +19,10 @@ class ContactSection extends StatelessWidget {
       child: Column(
         children: [
           //title
-          Text(
+          const Text(
             "Get in touch",
             style: TextStyle(
+                fontWeight: FontWeight.w900,
                 fontFamily: 'Montserrat',
                 fontSize: 24,
                 color: CustomColors.whitePrimary),
@@ -27,13 +31,14 @@ class ContactSection extends StatelessWidget {
             height: 50,
           ),
           ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: 700, maxHeight: 100),
+              constraints: const BoxConstraints(maxWidth: 700, maxHeight: 100),
               child: LayoutBuilder(
                 builder: (context, constraints) {
-                  if (constraints.maxWidth >= kMinDesktopWidth)
+                  if (constraints.maxWidth >= kMinDesktopWidth) {
                     return buildEmailFieldDesktop();
-                  else
+                  } else {
                     return buildEmailFieldMobile();
+                  }
                 },
               )),
           const SizedBox(
@@ -43,7 +48,7 @@ class ContactSection extends StatelessWidget {
             constraints: const BoxConstraints(maxWidth: 700),
             child: const CustomTextField(
               hintText: "Your Message",
-              maxline: 20,
+              maxline: 10,
             ),
           ),
           const SizedBox(
@@ -54,6 +59,7 @@ class ContactSection extends StatelessWidget {
             constraints: const BoxConstraints(maxWidth: 700),
             child: SizedBox(
               width: double.maxFinite,
+              // child: CustomButton(),
               child: ElevatedButton(
                   onPressed: () {},
                   child: const Text(
@@ -74,38 +80,54 @@ class ContactSection extends StatelessWidget {
             height: 15,
           ),
           //SNS button
-          Wrap(
-            spacing: 12,
-            runSpacing: 12,
-            alignment: WrapAlignment.center,
+          Column(
             children: [
-              InkWell(
-                  onTap: () {
-                    js.context.callMethod('open', [SnsLinks.linkedin]);
-                  },
-                  child: Image.asset(
-                    'assets/linkedin.png',
-                    color: CustomColors.whiteSecondary,
-                    width: 32,
-                  )),
-              InkWell(
-                  onTap: () {
-                    js.context.callMethod('open', [SnsLinks.github]);
-                  },
-                  child: Image.asset(
-                    'assets/github.png',
-                    color: CustomColors.whiteSecondary,
-                    width: 32,
-                  )),
-              InkWell(
-                onTap: () {
-                  js.context.callMethod('open', [SnsLinks.twitter]);
-                },
-                child: Image.asset(
-                  'assets/twitter.png',
-                  color: CustomColors.whiteSecondary,
-                  width: 32,
-                ),
+              Text(
+                "Find me on",
+                style: TextStyle(
+                    fontWeight: FontWeight.w900,
+                    fontFamily: 'Montserrat',
+                    fontSize: 24,
+                    color: CustomColors.whitePrimary),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Wrap(
+                spacing: 12,
+                runSpacing: 12,
+                alignment: WrapAlignment.center,
+                children: [
+                  // InkWell(
+                  //     onTap: () {
+                  //       js.context.callMethod('open', [SnsLinks.linkedin]);
+                  //     },
+                  //     child: Image.asset(
+                  //       'assets/linkedin.png',
+                  //       color: CustomColors.whiteSecondary,
+                  //       width: 32,
+                  //     )),
+                  // InkWell(
+                  //     onTap: () {
+                  //       js.context.callMethod('open', [SnsLinks.github]);
+                  //     },
+                  //     child: Image.asset(
+                  //       'assets/github.png',
+                  //       color: CustomColors.whiteSecondary,
+                  //       width: 32,
+                  //     )),
+                  // InkWell(
+                  //   onTap: () {
+                  //     js.context.callMethod('open', [SnsLinks.twitter]);
+                  //   },
+                  //   child: Image.asset(
+                  //     'assets/twitter.png',
+                  //     color: CustomColors.whiteSecondary,
+                  //     width: 32,
+                  //   ),
+                  // ),
+                  SocialIcons()
+                ],
               ),
             ],
           )

@@ -70,30 +70,20 @@ class MainDesktop extends StatelessWidget {
                   SizedBox(
                     height: 50,
                     width: 500,
+                    // width: MediaQuery.of(context).size.width,
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        // const SizedBox(
-                        //   width: 20.0,
-                        // ),
-                        // const Text(
-                        //   'Be',
-                        //   style: TextStyle(fontSize: 40.0),
-                        // ),
-                        // const SizedBox(
-                        //   width: 20. 0,
-                        // ),
                         DefaultTextStyle(
                           style: const TextStyle(
-                            fontSize: 35.0,
-                            fontFamily: 'Montserrat',
+                            fontSize: 30.0,
+                            fontFamily: 'FiraCode',
                           ),
                           child: AnimatedTextKit(
                             repeatForever: true,
                             animatedTexts: [
                               RotateAnimatedText('Mobile app Devloper',
                                   textStyle: const TextStyle(
-                                      fontWeight: FontWeight.w900,
                                       color: Colors.indigoAccent)),
                               RotateAnimatedText('Cross-Platform Sorcerer',
                                   textStyle: const TextStyle(
@@ -118,6 +108,7 @@ class MainDesktop extends StatelessWidget {
                         child: const Text(
                           'Get in touch',
                           style: TextStyle(
+                              fontWeight: FontWeight.w900,
                               fontFamily: 'Montserrat',
                               color: CustomColors.whitePrimary),
                         )),

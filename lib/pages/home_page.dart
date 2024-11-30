@@ -78,45 +78,45 @@ class _HomePageState extends State<HomePage> {
                   const MainMobile(),
 
                 // //SKILL
-                Container(
-                  key: navbarKeys[1],
-                  padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                  width: double.maxFinite,
-                  color: CustomColors.bgLight1,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      //title
-                      const Text(
-                        'What i can do',
-                        style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: CustomColors.whitePrimary),
-                      ),
-                      const SizedBox(
-                        height: 70,
-                      ),
+                // Container(
+                //   key: navbarKeys[1],
+                //   padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                //   width: double.maxFinite,
+                //   color: CustomColors.bgLight1,
+                //   child: Column(
+                //     mainAxisSize: MainAxisSize.min,
+                //     children: [
+                //       //title
+                //       const Text(
+                //         'What i can do',
+                //         style: TextStyle(
+                //             fontFamily: 'Montserrat',
+                //             fontSize: 24,
+                //             fontWeight: FontWeight.bold,
+                //             color: CustomColors.whitePrimary),
+                //       ),
+                //       const SizedBox(
+                //         height: 70,
+                //       ),
 
-                      //platform and skill desktop
-                      if (constraints.maxWidth > kMeDesktopWidth)
-                        const SkillDesktop()
-                      else
-                        const SkillsMobile()
+                //       //platform and skill desktop
+                //       if (constraints.maxWidth > kMeDesktopWidth)
+                //         const SkillDesktop()
+                //       else
+                //         const SkillsMobile()
 
-                      //platform skill mobile
-                    ],
-                  ),
-                ),
+                //       //platform skill mobile
+                //     ],
+                //   ),
+                // ),
 
                 const SizedBox(
                   height: 30,
                 ),
                 //PROJECTS
-                ProjectSection(
-                  key: navbarKeys[2],
-                ),
+                // ProjectSection(
+                //   key: navbarKeys[2],
+                // ),
                 const SizedBox(
                   height: 30,
                 ),
