@@ -1,21 +1,10 @@
+import 'dart:js' as js;
+
 import 'package:adityaportfolio/constants/colors.dart';
 import 'package:adityaportfolio/constants/size.dart';
-import 'package:adityaportfolio/utils/projects_utils.dart';
 import 'package:adityaportfolio/widget/contact_section.dart';
-import 'package:adityaportfolio/widget/custom_text_field.dart';
 import 'package:adityaportfolio/widget/drawer_mobile.dart';
-import 'package:adityaportfolio/widget/footer.dart';
-import 'package:adityaportfolio/widget/header_desktop.dart';
-import 'package:adityaportfolio/widget/header_mobile.dart';
-import 'package:adityaportfolio/widget/main_desktop.dart';
-import 'package:adityaportfolio/widget/main_mobile.dart';
-import 'package:adityaportfolio/widget/project_card.dart';
-import 'package:adityaportfolio/widget/project_section.dart';
-import 'package:adityaportfolio/widget/skill_desktop.dart';
-import 'package:adityaportfolio/widget/skills_mobile.dart';
 import 'package:flutter/material.dart';
-
-import 'dart:js' as js;
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -114,17 +103,18 @@ class _HomePageState extends State<HomePage> {
                 //   height: 30,
                 // ),
                 // //PROJECTS
-                ProjectSection(
-                  key: navbarKeys[2],
-                ),
+                // ProjectSection(
+                //   key: navbarKeys[2],
+                // ),
                 // const SizedBox(
                 //   height: 30,
                 // ),
 
                 // // //CONTACT
-                // ContactSection(
-                //   key: navbarKeys[3],
-                // ),
+                ContactSection(
+                  key: navbarKeys[3],
+                ),
+                // WhatsAppButton()
 
                 // const SizedBox(
                 //   height: 30,

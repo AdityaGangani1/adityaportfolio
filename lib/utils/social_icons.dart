@@ -1,7 +1,9 @@
+import 'dart:js' as js;
+
 import 'package:adityaportfolio/constants/sns_links.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'dart:js' as js;
+import 'package:url_launcher/url_launcher.dart';
 
 class SocialIcons extends StatefulWidget {
   const SocialIcons({super.key});
@@ -11,6 +13,25 @@ class SocialIcons extends StatefulWidget {
 }
 
 class _SocialIconsState extends State<SocialIcons> {
+//for whastapp
+  final String phoneNumber =
+      '+919664668177'; // Replace with your WhatsApp number
+  final String message =
+      'Hello! Aditya, I would like to connect with you.'; // Default message
+
+  launchWhatsApp() async {
+    final Uri whatsappUrl = Uri.parse(
+      'https://wa.me/$phoneNumber?text=${Uri.encodeComponent(message)}',
+    );
+
+    if (await canLaunchUrl(whatsappUrl)) {
+      await launchUrl(whatsappUrl, mode: LaunchMode.externalApplication);
+    } else {
+      print("Couldn't launch WhatsApp.");
+      // Show a Snackbar or Dialog for error feedback
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -40,6 +61,11 @@ class _SocialIconsState extends State<SocialIcons> {
             },
           ),
           _buildSocialCard(
+              context, FontAwesomeIcons.whatsapp, 'Whatsapp', Colors.green, () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => launchWhatsApp()));
+          }),
+          _buildSocialCard(
             context,
             FontAwesomeIcons.twitter,
             'Twitter',
@@ -65,46 +91,11 @@ class _SocialIconsState extends State<SocialIcons> {
         onTap: onTap,
         child: MouseRegion(
             cursor: SystemMouseCursors.click,
-            child:
-                // Container(
-                //   width: 80,
-                //   height: 80,
-                //   // decoration: BoxDecoration(
-                //   //   color: color.withOpacity(0.2),
-                //   //   borderRadius: BorderRadius.circular(10),
-                //   //   boxShadow: [
-                //   //     BoxShadow(
-                //   //       color: color.withOpacity(0.3),
-                //   //       blurRadius: 8,
-                //   //       spreadRadius: 2,
-                //   //       offset: const Offset(2, 4),
-                //   //     ),
-                //   //   ],
-                //   // ),
-
-                //   child: Column(
-                //     mainAxisAlignment: MainAxisAlignment.center,
-                //     children: [
-                //       Icon(icon, color: color, size: 35),
-                //       const SizedBox(height: 10),
-                //       Text(
-                //         label,
-                //         style: TextStyle(
-                //           fontFamily: 'Montserrat',
-                //           color: color,
-                //           fontSize: 16,
-                //           fontWeight: FontWeight.bold,
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-                // ),
-                //2
-                Stack(
+            child: Stack(
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       colors: [
                         Color(0xff252734),
                         Color.fromARGB(255, 13, 70, 127)
