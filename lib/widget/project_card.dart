@@ -14,7 +14,7 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.antiAlias,
-      height: 290,
+      height: 310,
       width: 260,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
@@ -48,8 +48,10 @@ class ProjectCard extends StatelessWidget {
             padding: EdgeInsets.fromLTRB(12, 0, 12, 12),
             child: Text(
               project.subtitle,
-              style:
-                  TextStyle(fontSize: 12, color: CustomColors.whiteSecondary),
+              style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 12,
+                  color: CustomColors.whiteSecondary),
             ),
           ),
           const Spacer(),
@@ -62,7 +64,9 @@ class ProjectCard extends StatelessWidget {
                 const Text(
                   "Avaliable on",
                   style: TextStyle(
-                      color: CustomColors.yellowSecondary, fontSize: 10),
+                      fontFamily: 'Montserrat',
+                      color: CustomColors.yellowSecondary,
+                      fontSize: 10),
                 ),
                 const Spacer(),
                 if (project.ioslink != null)
@@ -82,19 +86,19 @@ class ProjectCard extends StatelessWidget {
                       onTap: () {
                         js.context.callMethod("open", [project.androidLink]);
                       },
-                      child: Image.asset("assets/android.png", width: 17),
+                      child: Image.asset("assets/apple.png", width: 17),
                     ),
                   ),
-                if (project.weblink != null)
-                  Padding(
-                    padding: const EdgeInsets.only(left: 6),
-                    child: InkWell(
-                      onTap: () {
-                        js.context.callMethod("open", [project.weblink]);
-                      },
-                      child: Image.asset("assets/android.png", width: 17),
-                    ),
-                  ),
+                // if (project.weblink != null)
+                //   Padding(
+                //     padding: const EdgeInsets.only(left: 6),
+                //     child: InkWell(
+                //       onTap: () {
+                //         js.context.callMethod("open", [project.weblink]);
+                //       },
+                //       child: Image.asset("assets/android.png", width: 17),
+                //     ),
+                //   ),
               ],
             ),
           ),
