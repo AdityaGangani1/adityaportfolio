@@ -45,19 +45,7 @@ class _SocialIconsState extends State<SocialIcons> {
             'LinkedIn',
             Colors.blueAccent,
             () {
-              // Navigate to
               js.context.callMethod('open', [SnsLinks.linkedin]);
-            },
-          ),
-          _buildSocialCard(
-            context,
-            FontAwesomeIcons.github,
-            'Github',
-            Colors.grey.shade500,
-            () {
-              // Navigate to Twitter
-
-              js.context.callMethod('open', [SnsLinks.github]);
             },
           ),
           _buildSocialCard(
@@ -65,6 +53,15 @@ class _SocialIconsState extends State<SocialIcons> {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => launchWhatsApp()));
           }),
+          _buildSocialCard(
+            context,
+            FontAwesomeIcons.github,
+            'Github',
+            Colors.grey.shade500,
+            () {
+              js.context.callMethod('open', [SnsLinks.github]);
+            },
+          ),
           _buildSocialCard(
             context,
             FontAwesomeIcons.twitter,

@@ -1,4 +1,7 @@
 import 'package:adityaportfolio/pages/home_page.dart';
+import 'package:adityaportfolio/widget/contact_section.dart';
+import 'package:adityaportfolio/widget/custom_text_field.dart';
+import 'package:adityaportfolio/widget/email_form.dart';
 import 'package:flutter/material.dart';
 
 void main() {

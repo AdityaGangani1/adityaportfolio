@@ -4,6 +4,15 @@ import 'package:adityaportfolio/constants/colors.dart';
 import 'package:adityaportfolio/constants/size.dart';
 import 'package:adityaportfolio/widget/contact_section.dart';
 import 'package:adityaportfolio/widget/drawer_mobile.dart';
+import 'package:adityaportfolio/widget/email_form.dart';
+import 'package:adityaportfolio/widget/footer.dart';
+import 'package:adityaportfolio/widget/header_desktop.dart';
+import 'package:adityaportfolio/widget/header_mobile.dart';
+import 'package:adityaportfolio/widget/main_desktop.dart';
+import 'package:adityaportfolio/widget/main_mobile.dart';
+import 'package:adityaportfolio/widget/project_section.dart';
+import 'package:adityaportfolio/widget/skill_desktop.dart';
+import 'package:adityaportfolio/widget/skills_mobile.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -46,81 +55,80 @@ class _HomePageState extends State<HomePage> {
                   key: navbarKeys.first,
                 ),
                 //MAIN
-                // if (constraints.maxWidth >= kMinDesktopWidth)
-                //   HeaderDesktop(
-                //     onNavMenuTap: (int navIndex) {
-                //       //call function
-                //       scrollToSection(navIndex);
-                //     },
-                //   )
-                // else
-                //   HeaderMobile(
-                //     onMenuTap: () {
-                //       scaffolKey.currentState?.openEndDrawer();
-                //     },
-                //     onLogoTap: () {},
-                //   ),
+                if (constraints.maxWidth >= kMinDesktopWidth)
+                  HeaderDesktop(
+                    onNavMenuTap: (int navIndex) {
+                      //call function
+                      scrollToSection(navIndex);
+                    },
+                  )
+                else
+                  HeaderMobile(
+                    onMenuTap: () {
+                      scaffolKey.currentState?.openEndDrawer();
+                    },
+                    onLogoTap: () {},
+                  ),
 
-                // if (constraints.maxWidth >= kMinDesktopWidth)
-                //   const MainDesktop()
-                // else
-                //   const MainMobile(),
+                if (constraints.maxWidth >= kMinDesktopWidth)
+                  const MainDesktop()
+                else
+                  const MainMobile(),
 
-                // //SKILL
-                // Container(
-                //   key: navbarKeys[1],
-                //   padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                //   width: double.maxFinite,
-                //   color: CustomColors.bgLight1,
-                //   child: Column(
-                //     mainAxisSize: MainAxisSize.min,
-                //     children: [
-                //       //title
-                //       const Text(
-                //         'What i can do',
-                //         style: TextStyle(
-                //             fontFamily: 'Montserrat',
-                //             fontSize: 24,
-                //             fontWeight: FontWeight.bold,
-                //             color: CustomColors.whitePrimary),
-                //       ),
-                //       const SizedBox(
-                //         height: 70,
-                //       ),
+                //SKILL
+                Container(
+                  key: navbarKeys[1],
+                  padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                  width: double.maxFinite,
+                  color: CustomColors.bgLight1,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      //title
+                      const Text(
+                        'What i can do',
+                        style: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: CustomColors.whitePrimary),
+                      ),
+                      const SizedBox(
+                        height: 70,
+                      ),
 
-                //       //platform and skill desktop
-                //       if (constraints.maxWidth > kMeDesktopWidth)
-                //         const SkillDesktop()
-                //       else
-                //         const SkillsMobile()
+                      //platform and skill desktop
+                      if (constraints.maxWidth > kMeDesktopWidth)
+                        const SkillDesktop()
+                      else
+                        const SkillsMobile()
 
-                //       //platform skill mobile
-                //     ],
-                //   ),
-                // ),
+                      //platform skill mobile
+                    ],
+                  ),
+                ),
 
-                // const SizedBox(
-                //   height: 30,
-                // ),
-                // //PROJECTS
-                // ProjectSection(
-                //   key: navbarKeys[2],
-                // ),
-                // const SizedBox(
-                //   height: 30,
-                // ),
+                const SizedBox(
+                  height: 30,
+                ),
+                //PROJECTS
+                ProjectSection(
+                  key: navbarKeys[2],
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
 
-                // // //CONTACT
+                // //CONTACT
                 ContactSection(
                   key: navbarKeys[3],
                 ),
-                // WhatsAppButton()
 
-                // const SizedBox(
-                //   height: 30,
-                // ),
-                // // //FOOTER
-                // Footer()
+                const SizedBox(
+                  height: 30,
+                ),
+                // //FOOTER
+                Footer()
               ],
             ),
           ));
