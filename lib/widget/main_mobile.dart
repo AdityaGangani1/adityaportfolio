@@ -28,7 +28,8 @@ class MainMobile extends StatelessWidget {
             },
             blendMode: BlendMode.srcATop,
             child: Image.asset(
-              'assets/dash.png',
+              'assets/dash.jpeg',
+              height: 250,
               width: screenWidth,
             ),
           ),
@@ -37,7 +38,7 @@ class MainMobile extends StatelessWidget {
           ),
 
           SizedBox(
-            height: 50,
+            height: 25,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

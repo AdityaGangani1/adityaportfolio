@@ -12,13 +12,11 @@ class ContactSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-      // color: CustomColors.bgLight1,
+      color: CustomColors.bgLight1,
       child: Column(
         children: [
-          //title
-
           ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 700, maxHeight: 380),
+              constraints: const BoxConstraints(maxWidth: 900, maxHeight: 500),
               child: LayoutBuilder(
                 builder: (context, constraints) {
                   if (constraints.maxWidth >= kMinDesktopWidth) {
@@ -28,9 +26,9 @@ class ContactSection extends StatelessWidget {
                   }
                 },
               )),
-          const SizedBox(
-            height: 20,
-          ),
+          // const SizedBox(
+          //   height: 50,
+          // ),
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 300),
             child: const Divider(),
@@ -87,19 +85,20 @@ class ContactSection extends StatelessWidget {
   Column buildEmailFieldMobile() {
     return const Column(
       children: [
-        //name
-        Flexible(
-            child: CustomTextField(
-          hintText: "Your name",
-        )),
-        SizedBox(
-          height: 15,
-        ),
-        //email
-        Flexible(
-            child: CustomTextField(
-          hintText: "Email name",
-        )),
+        Flexible(child: EmailForm())
+        //namee
+        // Flexible(
+        //     child: CustomTextField(
+        //   hintText: "Your name",
+        // )),
+        // SizedBox(
+        //   height: 15,
+        // ),
+        // //email
+        // Flexible(
+        //     child: CustomTextField(
+        //   hintText: "Email name",
+        // )),
       ],
     );
   }
