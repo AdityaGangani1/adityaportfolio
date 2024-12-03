@@ -17,7 +17,6 @@ class Footer extends StatelessWidget {
             fontWeight: FontWeight.w400,
             color: CustomColors.whiteSecondary),
       ),
-      // color: Colors.blueGrey,
     );
   }
 }
