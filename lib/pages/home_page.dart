@@ -122,13 +122,13 @@ class _HomePageState extends State<HomePage> {
                 // ),
 
                 //EDUCATION
-                if (constraints.maxWidth >= kMinDesktopWidth)
-                  EducationHeader()
-                else
-                  EducationMobile(),
-                const SizedBox(
-                  height: 30,
-                ),
+                // if (constraints.maxWidth >= kMinDesktopWidth)
+                //   EducationHeader()
+                // else
+                //   EducationMobile(),
+                // const SizedBox(
+                //   height: 30,
+                // ),
 
                 // //CONTACT
                 ContactSection(
