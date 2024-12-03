@@ -33,7 +33,9 @@ class _EmailFormState extends State<EmailForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColors.bgLight1,
+      // backgroundColor: CustomColors.bgLight1,
+      backgroundColor: CustomColors.scaffoldBg,
+
       body: Row(
         children: [
           Expanded(

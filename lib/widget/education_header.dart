@@ -7,7 +7,7 @@ class EducationHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: CustomColors.scaffoldBg,
+        color: CustomColors.bgLight1,
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Stack(
@@ -59,9 +59,6 @@ class EducationHeader extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 25,
-                  )
                 ],
               ),
             ],

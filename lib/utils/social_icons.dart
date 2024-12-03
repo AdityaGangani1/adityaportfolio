@@ -13,25 +13,6 @@ class SocialIcons extends StatefulWidget {
 }
 
 class _SocialIconsState extends State<SocialIcons> {
-//for whastapp
-  final String phoneNumber =
-      '+919664668177'; // Replace with your WhatsApp number
-  final String message =
-      'Hello! Aditya, I would like to connect with you.'; // Default message
-
-  launchWhatsApp() async {
-    final Uri whatsappUrl = Uri.parse(
-      'https://wa.me/$phoneNumber?text=${Uri.encodeComponent(message)}',
-    );
-
-    if (await canLaunchUrl(whatsappUrl)) {
-      await launchUrl(whatsappUrl, mode: LaunchMode.externalApplication);
-    } else {
-      print("Couldn't launch WhatsApp.");
-      // Show a Snackbar or Dialog for error feedback
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -48,11 +29,6 @@ class _SocialIconsState extends State<SocialIcons> {
               js.context.callMethod('open', [SnsLinks.linkedin]);
             },
           ),
-          _buildSocialCard(
-              context, FontAwesomeIcons.whatsapp, 'Whatsapp', Colors.green, () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => launchWhatsApp()));
-          }),
           _buildSocialCard(
             context,
             FontAwesomeIcons.github,

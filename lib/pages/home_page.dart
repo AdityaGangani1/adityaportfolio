@@ -57,25 +57,25 @@ class _HomePageState extends State<HomePage> {
                   key: navbarKeys.first,
                 ),
                 //MAIN
-                // if (constraints.maxWidth >= kMinDesktopWidth)
-                //   HeaderDesktop(
-                //     onNavMenuTap: (int navIndex) {
-                //       //call function
-                //       scrollToSection(navIndex);
-                //     },
-                //   )
-                // else
-                //   HeaderMobile(
-                //     onMenuTap: () {
-                //       scaffolKey.currentState?.openEndDrawer();
-                //     },
-                //     onLogoTap: () {},
-                //   ),
+                if (constraints.maxWidth >= kMinDesktopWidth)
+                  HeaderDesktop(
+                    onNavMenuTap: (int navIndex) {
+                      //call function
+                      scrollToSection(navIndex);
+                    },
+                  )
+                else
+                  HeaderMobile(
+                    onMenuTap: () {
+                      scaffolKey.currentState?.openEndDrawer();
+                    },
+                    onLogoTap: () {},
+                  ),
 
-                // if (constraints.maxWidth >= kMinDesktopWidth)
-                //   const MainDesktop()
-                // else
-                //   const MainMobile(),
+                if (constraints.maxWidth >= kMinDesktopWidth)
+                  const MainDesktop()
+                else
+                  const MainMobile(),
 
                 // //SKILL
                 // Container(
@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                 //   height: 30,
                 // ),
 
-                //EDUCATION
+                // // EDUCATION
                 // if (constraints.maxWidth >= kMinDesktopWidth)
                 //   EducationHeader()
                 // else
@@ -130,17 +130,17 @@ class _HomePageState extends State<HomePage> {
                 //   height: 30,
                 // ),
 
-                // //CONTACT
-                ContactSection(
-                  key: navbarKeys[3],
-                ),
+                // // //CONTACT
+                // ContactSection(
+                //   key: navbarKeys[3],
+                // ),
 
-                const SizedBox(
-                  height: 30,
-                ),
+                // const SizedBox(
+                //   height: 30,
+                // ),
 
-                // //FOOTER
-                Footer(),
+                // // //FOOTER
+                // Footer(),
               ],
             ),
           ));

@@ -1,12 +1,32 @@
 import 'package:adityaportfolio/constants/colors.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MainDesktop extends StatelessWidget {
   const MainDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
+//for whastapp
+    final String phoneNumber =
+        '+919664668177'; // Replace with your WhatsApp number
+    final String message =
+        'Hello! Aditya, I would like to connect with you.'; // Default message
+
+    launchWhatsApp() async {
+      final Uri whatsappUrl = Uri.parse(
+        'https://wa.me/$phoneNumber?text=${Uri.encodeComponent(message)}',
+      );
+
+      if (await canLaunchUrl(whatsappUrl)) {
+        await launchUrl(whatsappUrl, mode: LaunchMode.externalApplication);
+      } else {
+        print("Couldn't launch WhatsApp.");
+        // Show a Snackbar or Dialog for error feedback
+      }
+    }
+
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
 
@@ -100,12 +120,14 @@ class MainDesktop extends StatelessWidget {
                   ),
                   const SizedBox(height: 50),
                   SizedBox(
-                    width: 200,
+                    width: 220,
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             minimumSize: const Size(280, 50),
                             backgroundColor: CustomColors.yellowPrimary),
-                        onPressed: () {},
+                        onPressed: () {
+                          launchWhatsApp();
+                        },
                         child: const Text(
                           'Get in touch',
                           style: TextStyle(
@@ -118,45 +140,6 @@ class MainDesktop extends StatelessWidget {
               ),
             ],
           ),
-
-          // SizedBox(
-          //   width: 300.0,
-          //   child: DefaultTextStyle(
-          //     style: const TextStyle(
-          //       fontSize: 32.0,
-          //       fontWeight: FontWeight.bold,
-          //     ),
-          //     child: AnimatedTextKit(
-          //       animatedTexts: [
-          //         FadeAnimatedText('do IT!'),
-          //         FadeAnimatedText('do it RIGHT!!'),
-          //         FadeAnimatedText('do it RIGHT NOW!!!'),
-          //       ],
-          //     ),
-          //   ),
-          // ),
-
-          //1
-          // Container(
-          //   decoration: BoxDecoration(
-          //     shape: BoxShape.circle,
-          //     boxShadow: [
-          //       BoxShadow(
-          //         color: Colors.blue.withOpacity(0.5),
-          //         blurRadius: 20,
-          //         spreadRadius: 3,
-          //       ),
-          //     ],
-          //   ),
-          //   child: ClipOval(
-          //     child: Image.asset(
-          //       'assets/dashr.png',
-          //       fit: BoxFit.cover,
-          //       height: 300,
-          //       width: 300,
-          //     ),
-          //   ),
-          // )
 
           //2
           Stack(
